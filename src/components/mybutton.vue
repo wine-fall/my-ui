@@ -1,17 +1,19 @@
 <template>
-    <button class="Gbutton" :class="[`Gbutton--${type}`,{
+    <button class="el-button" :class="[`el-button--${type}`,{
         'is-plain':plain,
         'is-circle':circle,
-        'is-round':round
+        'is-round':round,
+        'is-disabled':disabled
     }]" @click="hindleClick">
         <i v-if="icon" :class="icon"></i>
+        <!-- 有slot就显示，没有就不显示 -->
         <span v-if="$slots.default"><slot></slot></span>
     </button>
 </template>
 
 <script>
 export default {
-  name: 'g-button',
+  name: 'el-button',
   props: {
     type:{//相当于一个options
         type:String,
@@ -32,6 +34,10 @@ export default {
     round:{
         type:Boolean,
         default:false
+    },
+    disabled:{
+        type:Boolean,
+        default:false
     }
   },
   methods:{
@@ -43,7 +49,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.Gbutton{
+.el-button{
     display: inline-block;
   line-height: 1;
   white-space: nowrap;
@@ -187,6 +193,15 @@ export default {
         background: #f56c6c;
         border-color: #f56c6c;
         color: #fff;
+      }
+    }
+    &.is-disabled {
+      &:hover,
+      &:focus {
+        background: white;
+        border-color:#f56c6c;
+        color: black;
+        cursor: not-allowed;
       }
     }
   }

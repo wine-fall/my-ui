@@ -1,34 +1,54 @@
 <template>
   <div id="app">
       <div class="row">
-        <g-button type="success">success</g-button>
-        <g-button type="primary">primary</g-button>
-        <g-button type="info">info</g-button>
-        <g-button type="warning">warning</g-button>
-        <g-button type="danger">danger</g-button>
-        <g-button>default</g-button>
+        <el-button type="success">success</el-button>
+        <el-button type="primary">primary</el-button>
+        <el-button type="info">info</el-button>
+        <el-button type="warning">warning</el-button>
+        <el-button disabled type="danger">danger</el-button>
+        <el-button>default</el-button>
       </div>
       <div class="row">
-        <g-button plain type="success">success</g-button>
-        <g-button circle type="primary">primary</g-button>
-        <g-button round type="info">info</g-button>
-        <g-button type="warning">warning</g-button>
-        <g-button type="danger">danger</g-button>
-        <g-button>default</g-button>
+        <el-button plain type="success">success</el-button>
+        <el-button circle type="primary">primary</el-button>
+        <el-button round type="info">info</el-button>
+        <el-button type="warning">warning</el-button>
+        <el-button type="danger">danger</el-button>
+        <el-button>default</el-button>
       </div>
       <div class="row">
-        <g-button @click="changeIcon" icon="el-icon-check" type="success">success</g-button>
-        <g-button icon="el-icon-delete" type="primary">primary</g-button>
-        <g-button icon="el-icon-edit" type="info">info</g-button>
-        <g-button icon="el-icon-check" type="warning"></g-button>
-        <g-button icon="el-icon-check" type="danger"></g-button>
-        <g-button icon="el-icon-edit"></g-button>
+        <el-button @click="changeIcon" icon="el-icon-check" type="success">success</el-button>
+        <el-button icon="el-icon-delete" type="primary">primary</el-button>
+        <el-button icon="el-icon-edit" type="info">info</el-button>
+        <el-button icon="el-icon-check" type="warning"></el-button>
+        <el-button icon="el-icon-check" type="danger"></el-button>
+        <el-button icon="el-icon-edit" @click="visible=true">显示对话框</el-button>
+      </div>
+      <div class="row">
+          <el-dialog title="我还是标题" :visible.sync="visible" width="40%">
+              <template v-slot:title>
+                  <h3>标题3</h3>
+              </template>
+              <template v-slot:content>
+                  拉拉
+              </template>
+              <template v-slot:footer>
+                  <el-button type="primary" @click="visible=false">确定</el-button>
+                  <el-button @click="visible=false">取消</el-button>
+              </template>
+          </el-dialog>
       </div>
   </div>
-</template>
+
+</template> 
 
 <script>
 export default{
+    data(){
+        return {
+            visible:false
+        }
+    },
     methods:{
         changeIcon(){
             console.log(1);
@@ -37,7 +57,7 @@ export default{
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .row{
     display: flex;
     margin-bottom: 15px;
