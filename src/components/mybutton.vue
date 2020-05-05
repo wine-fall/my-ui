@@ -50,7 +50,7 @@ export default {
 
 <style lang="scss" scoped>
 .el-button{
-    display: inline-block;
+  display: inline-block;
   line-height: 1;
   white-space: nowrap;
   cursor: pointer;
