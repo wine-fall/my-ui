@@ -41,10 +41,7 @@ export default {
                 this.$refs.toggle.style.borderColor=color
                 this.$refs.toggle.style.backgroundColor=color
             }
-            
             this.$refs.input.checked=this.value
-            console.log(this.$refs.input.getAttribute);
-
         }
     },
     mounted(){
