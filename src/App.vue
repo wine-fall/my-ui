@@ -54,6 +54,14 @@
                 <el-checkbox label="3">被group包裹的复选框3</el-checkbox>
             </el-checkbox-group>
         </div>
+        <div>
+            <div>form表单区域</div>
+            <el-form :model="model" label-width="120px">
+                <el-form-item label="用户名">
+                    <el-input placeholder=""></el-input>
+                </el-form-item>
+            </el-form>
+        </div>
   </div>
 
 </template> 
@@ -67,7 +75,10 @@ export default{
             toggle:false,
             gender:"1",
             active:false,
-            hobby:[]
+            hobby:[],
+            model:{
+
+            }
         }
     }
 }

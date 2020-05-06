@@ -8,6 +8,8 @@ import Elradio from './components/myradio.vue'
 import Elradiogroup from './components/myradiogroup.vue'
 import Elcheckbox from './components/mycheckbox.vue'
 import Elcheckboxgroup from './components/mycheckboxgroup.vue'
+import Elform from './components/myform.vue'
+import Elformitem from './components/myformItem.vue'
 
 import './assets/fonts/font.scss'
 Vue.config.productionTip = false
@@ -19,6 +21,8 @@ Vue.component(Elradio.name,Elradio)
 Vue.component(Elradiogroup.name,Elradiogroup)
 Vue.component(Elcheckbox.name,Elcheckbox)
 Vue.component(Elcheckboxgroup.name,Elcheckboxgroup)
+Vue.component(Elform.name,Elform)
+Vue.component(Elformitem.name,Elformitem)
 
 new Vue({
   render: h => h(App)
